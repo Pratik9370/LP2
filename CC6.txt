@@ -1,0 +1,38 @@
+public class FibonacciSeries {
+
+    public static List<Long> generateFibonacci(Integer n) {
+
+        List<Long> fibList = new List<Long>();
+
+        if(n <= 0) return fibList;
+
+        Long first = 0;
+        Long second = 1;
+
+        fibList.add(first);
+
+        if(n == 1) return fibList;
+
+        fibList.add(second);
+
+        for(Integer i = 3; i <= n; i++) {
+            Long next = first + second;
+            fibList.add(next);
+
+            first = second;
+            second = next;
+        }
+
+        return fibList;
+    }
+}
+
+
+
+
+
+List<Long> result = FibonacciSeries.generateFibonacci(10);
+
+for(Long num : result) {
+    System.debug(num);
+}

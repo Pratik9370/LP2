@@ -1,0 +1,28 @@
+public class FactorialCalculator {
+    
+    public static Long calculateFactorial(Integer num) {
+        
+        // Check for negative number
+        if(num < 0) {
+            return null;
+        }
+        
+        Long result = 1;
+        
+        for(Integer i = 1; i <= num; i++) {
+            result = result * i;
+        }
+        
+        return result;
+    }
+}
+
+
+
+
+
+
+
+Integer num = 5;
+Long fact = FactorialCalculator.calculateFactorial(num);
+System.debug('Factorial of ' + num + ' is: ' + fact);
